@@ -1,13 +1,19 @@
-export function validate(schema, src){
-  return function(req, res, next){
-    const {error} = schema.validate(req[src]);
-    if(!error){
+// Fonction d'ordre supérieur pour créer un middleware de validation
+export function validate(schema, src) {
+  // Retourne un middleware Express
+  return function(req, res, next) {
+    // Valide les données de la requête en utilisant le schéma Joi fourni
+    const { error } = schema.validate(req[src]);
+    
+    // Si aucune erreur n'est trouvée, passe au middleware suivant
+    if (!error) {
       return next();
     }
-    res.status(400).json({error: error.details[0].message});
+    
+    // En cas d'erreur, renvoie une réponse 400 avec le message d'erreur
+    res.status(400).json({ error: error.details[0].message });
   };
 }
-
 
 /*
 Plus besoin de ces fonction très répétitives (elles sont identique si ce n'est me schema à valider)
