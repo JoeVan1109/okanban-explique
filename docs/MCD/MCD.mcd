@@ -1,0 +1,9 @@
+LISTE:titre, position
+CONTIENT, 0N LISTE, 11 CARTE
+
+:
+CARTE:code_carte, titre, contenu, couleur, position
+
+:
+POSSEDE, 0N CARTE, 0N LABEL
+LABEL:name, couleur

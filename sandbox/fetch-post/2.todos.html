@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <title>Les dernières actualités | o'News</title>
+
+  <script defer src="./2.todos.js"></script>
+</head>
+<body>
+  <h1>o'News</h1>
+  <p>Les dernières actualités</p>
+
+  <!-- POST -->
+  <form>
+    <div>
+      <label for="title">Titre :</label>
+      <input type="text" id="title" name="title">
+    </div>
+
+    <div>
+      <label for="body">Body :</label>
+      <input type="text" id="body" name="body">
+    </div>
+
+    <button>Créer une nouvelle publication</button>
+  </form>
+
+  <!-- GET : insérer des listes récupérées sur une API dans cette DIV -->
+  <div id="posts-container"></div>
+
+
+</body>
+
+<template id="post-template">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title" slot="post-title">
+        TITRE
+      </p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+    <div class="card-content">
+      <div class="content" slot="post-body">
+        BODY
+      </div>
+    </div>
+  </div>
+</template>
+
+</html>

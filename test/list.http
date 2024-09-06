@@ -1,0 +1,88 @@
+GET http://localhost:4000/lists
+
+###
+POST http://localhost:4000/lists
+Content-Type: application/json
+
+{
+  "title":"Je suis une jolie petite liste"
+}
+###
+POST http://localhost:4000/lists
+Content-Type: application/json
+
+{
+  "title":"Je suis une très jolie petite liste",
+  "position": 5
+}
+###
+POST http://localhost:4000/lists
+Content-Type: application/json
+
+{
+  "position": 5
+}
+###
+POST http://localhost:4000/lists
+Content-Type: application/json
+
+{
+  "title":"Je suis une très jolie petite liste",
+  "position": "Quesadillas"
+}
+###
+GET http://localhost:4000/lists/1
+###
+GET http://localhost:4000/lists/544654
+###
+GET http://localhost:4000/lists/blob
+###
+PATCH http://localhost:4000/lists/2
+Content-Type: application/json
+
+{
+  "title":"Nouveau titre"
+}
+###
+PATCH http://localhost:4000/lists/2
+Content-Type: application/json
+
+{
+  "position":54
+}
+###
+PATCH http://localhost:4000/lists/2
+Content-Type: application/json
+
+{
+  "title":321
+}
+###
+PATCH http://localhost:4000/lists/2
+Content-Type: application/json
+
+{
+  "title":"titre plus mieux",
+  "position": "Joe"
+}
+###
+PATCH http://localhost:4000/lists/2
+Content-Type: application/json
+
+{
+
+}
+###
+PATCH http://localhost:4000/lists/354654
+Content-Type: application/json
+
+{
+
+}
+###
+DELETE  http://localhost:4000/lists/1
+###
+DELETE  http://localhost:4000/lists/jack
+###
+DELETE  http://localhost:4000/lists/666
+
